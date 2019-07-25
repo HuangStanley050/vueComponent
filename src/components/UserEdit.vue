@@ -9,11 +9,13 @@
 </template>
 
 <script>
+import {eventBus} from "../main";
 export default {
     props:['userAge'],
     methods:{
       editAge(){
           this.userAge = 88;
+          eventBus.$emit('ageWasEdited',this.userAge);
       }
     }
 }
